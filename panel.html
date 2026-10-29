@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel strony (makieta) · Marta [Nazwisko]</title>
+<meta name="description" content="Makieta panelu do aktualizacji cen, godzin kontaktu i komunikatu o urlopie.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FBF6F0">
+<link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/styles.css">
+<script src="assets/app.js" defer></script>
+</head>
+<body class="panel-page">
+<a class="skip-link" href="#tresc">Przejdź do treści</a>
+<div class="proto-bar">
+  <div class="wrap">
+    <p><strong>PROTOTYP</strong> · treści, ceny i dane są przykładowe</p>
+    <p><a href="panel.html">Podgląd panelu edycji</a> · <a href="?urlop=1" data-toggle-vacation>Pokaż komunikat o urlopie</a></p>
+  </div>
+</div>
+
+<main id="tresc">
+<header class="site-header">
+  <div class="wrap">
+    <div class="nav-shell">
+      <span class="brand"><span class="brand-name">Panel strony</span><span class="brand-role">Marta [Nazwisko] · makieta, nic nie jest zapisywane</span></span>
+      <a class="btn btn-small btn-ghost" href="index.html">Zobacz stronę</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero" aria-labelledby="panel-title">
+  <div class="wrap stack">
+    <p class="eyebrow">Aktualizacja danych</p>
+    <h1 id="panel-title">Najważniejsze dane <em>w jednym miejscu</em></h1>
+    <p class="lead">Zmieniasz pola po lewej, a obok od razu widzisz, jak będą wyglądać na stronie.</p>
+  </div>
+</section>
+
+<div class="wrap panel-shell">
+  <form class="panel-card" id="panel-form" novalidate>
+    <h2>Edycja</h2>
+    <fieldset class="panel-group">
+      <legend>Ceny</legend>
+      <div class="row-2">
+        <div class="field"><label for="p-consult">Konsultacja (zł)</label><input id="p-consult" type="number" inputmode="decimal" min="0" step="10" value="220"></div>
+        <div class="field"><label for="p-session">Sesja (zł)</label><input id="p-session" type="number" inputmode="decimal" min="0" step="10" value="220"></div>
+      </div>
+      <p class="hint small muted">Koszt miesiąca liczy się sam: 4–5 sesji.</p>
+    </fieldset>
+    <fieldset class="panel-group">
+      <legend>Kontakt</legend>
+      <div class="field"><label for="p-hours">Godziny kontaktu telefonicznego</label><input id="p-hours" type="text" maxlength="120" value="pon.–pt., 12:00–13:00"></div>
+      <div class="row-2">
+        <div class="field"><label for="p-reply-min">Czas odpowiedzi: od</label><input id="p-reply-min" type="number" min="1" max="10" value="1"></div>
+        <div class="field"><label for="p-reply-max">do (dni roboczych)</label><input id="p-reply-max" type="number" min="1" max="10" value="2"></div>
+      </div>
+    </fieldset>
+    <fieldset class="panel-group">
+      <legend>Urlop</legend>
+      <label class="switch"><input id="p-vac-on" type="checkbox"> Pokaż komunikat o urlopie</label>
+      <div id="vac-fields" hidden>
+        <div class="row-2 field-first">
+          <div class="field"><label for="p-vac-from">Od</label><input id="p-vac-from" type="date" value="2026-11-02"></div>
+          <div class="field"><label for="p-vac-to">Do</label><input id="p-vac-to" type="date" value="2026-11-08"></div>
+        </div>
+        <div class="field"><label for="p-vac-text">Tekst komunikatu</label><textarea id="p-vac-text" maxlength="300">W tym czasie nie odpowiadam na wiadomości i telefony.</textarea></div>
+      </div>
+    </fieldset>
+    <div class="form-actions">
+      <button class="btn" type="submit">Zapisz i opublikuj <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+    <div class="notice notice-ok toast" id="panel-toast" tabindex="-1" hidden role="status">
+      <div><h3>To tylko makieta</h3><p>W docelowym panelu zmiany pojawią się na stronie zwykle w ciągu kilku minut. Wcześniejszą wersję zawsze można przywrócić.</p></div>
+    </div>
+  </form>
+
+  <aside class="panel-preview" aria-label="Podgląd na stronie">
+    <div class="preview-frame">
+      <p class="preview-label">Podgląd · tak to zobaczą odwiedzający</p>
+      <div class="stack">
+        <div class="notice notice-vacation" id="pv-vacation" hidden>
+          <div><h3 id="pv-vac-title">Przerwa urlopowa</h3><p id="pv-vac-text"></p></div>
+        </div>
+        <div class="price-grid price-light">
+          <div class="price-card"><span class="label">Konsultacja</span><span class="amount"><span id="pv-consult">220 zł</span> <small>/ 50 min</small></span></div>
+          <div class="price-card"><span class="label">Sesja</span><span class="amount"><span id="pv-session">220 zł</span> <small>/ 50 min</small></span></div>
+          <div class="price-card highlight"><span class="label">Orientacyjnie w miesiącu</span><span class="amount" id="pv-month">880–1100 zł</span></div>
+        </div>
+        <p class="small">Telefon: <span id="pv-hours">pon.–pt., 12:00–13:00</span>. Odpowiedź zwykle w ciągu <span id="pv-reply">1–2</span> dni roboczych.</p>
+      </div>
+    </div>
+  </aside>
+</div>
+</main>
+
+</body>
+</html>

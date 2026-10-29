@@ -9,8 +9,8 @@
 <meta name="theme-color" content="#FBF6F0">
 <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/styles.css?v=202610291717">
-<script src="assets/app.js?v=202610291717" defer></script>
+<link rel="stylesheet" href="assets/styles.css?v=202610291829">
+<script src="assets/app.js?v=202610291829" defer></script>
 </head>
 <body class="panel-page">
 <a class="skip-link" href="#tresc">Przejdź do treści</a>
@@ -35,20 +35,22 @@
   <div class="wrap stack">
     <p class="eyebrow">Aktualizacja danych</p>
     <h1 id="panel-title">Najważniejsze dane <em>w jednym miejscu</em></h1>
-    <p class="lead">Zmieniasz pola po lewej, a obok od razu widzisz, jak będą wyglądać na stronie.</p>
+    <p class="lead">Zmieniasz pola, a podgląd od razu pokazuje, jak będą wyglądać na stronie. Zmiany trafiają na stronę dopiero po kliknięciu „Zapisz i opublikuj”.</p>
   </div>
 </section>
 
 <div class="wrap panel-shell">
-  <form class="panel-card" id="panel-form" novalidate>
-    <h2>Edycja</h2>
+  <form class="panel-card" id="panel-form" novalidate aria-labelledby="edit-title">
+    <h2 id="edit-title">Edycja</h2>
+    <div class="notice notice-err" id="panel-errors" tabindex="-1" hidden role="alert">
+      <div><h3>Nie można opublikować. Do poprawy:</h3><ul></ul></div>
+    </div>
     <fieldset class="panel-group">
       <legend>Ceny</legend>
       <div class="row-2">
-        <div class="field"><label for="p-consult">Konsultacja (zł)</label><input id="p-consult" type="number" inputmode="decimal" min="0" step="10" value="220"></div>
-        <div class="field"><label for="p-session">Sesja (zł)</label><input id="p-session" type="number" inputmode="decimal" min="0" step="10" value="220"></div>
+        <div class="field"><label for="p-consult">Konsultacja (zł)</label><input id="p-consult" type="number" inputmode="decimal" min="1" step="0.01" value="220"></div>
+        <div class="field"><label for="p-session">Sesja (zł)</label><input id="p-session" type="number" inputmode="decimal" min="1" step="0.01" value="220"></div>
       </div>
-      
     </fieldset>
     <fieldset class="panel-group">
       <legend>Kontakt</legend>
@@ -67,30 +69,30 @@
           <div class="field"><label for="p-vac-to">Do</label><input id="p-vac-to" type="date" value="2026-11-08"></div>
         </div>
         <div class="field"><label for="p-vac-text">Tekst komunikatu</label><textarea id="p-vac-text" maxlength="300">W tym czasie nie odpowiadam na wiadomości i telefony.</textarea></div>
+        <p class="hint small muted">Komunikat zniknie ze strony automatycznie po dacie zakończenia urlopu.</p>
       </div>
     </fieldset>
-    <div class="form-actions">
-      <button class="btn" type="submit">Zapisz i opublikuj <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-    </div>
-    <div class="notice notice-ok toast" id="panel-toast" tabindex="-1" hidden role="status">
-      <div><h3>To tylko makieta</h3><p>W docelowym panelu zmiany pojawią się na stronie zwykle w ciągu kilku minut. Wcześniejszą wersję zawsze można przywrócić.</p></div>
-    </div>
   </form>
 
-  <aside class="panel-preview" aria-label="Podgląd na stronie">
+  <aside class="panel-preview" aria-labelledby="preview-title">
     <div class="preview-frame">
-      <p class="preview-label">Podgląd · tak to zobaczą odwiedzający</p>
+      <p class="preview-label" id="preview-title">Podgląd · jeszcze nieopublikowane</p>
       <div class="stack">
         <div class="notice notice-vacation" id="pv-vacation" hidden>
           <div><h3 id="pv-vac-title">Przerwa urlopowa</h3><p id="pv-vac-text"></p></div>
         </div>
-        <div class="price-grid price-light">
-          <div class="price-card"><span class="label">Konsultacja</span><span class="amount"><span id="pv-consult">220 zł</span> <small>/ 50 min</small></span></div>
-          <div class="price-card"><span class="label">Sesja</span><span class="amount"><span id="pv-session">220 zł</span> <small>/ 50 min</small></span></div>
-          
-        </div>
-        <p class="small">Telefon: <span id="pv-hours">pon.–pt., 12:00–13:00</span>. Odpowiedź zwykle w ciągu <span id="pv-reply">1–2</span> dni roboczych.</p>
+        <dl class="prices">
+          <div><dt>Konsultacja</dt><dd><span id="pv-consult" class="pv-amount">220 zł</span> <span>50 min</span></dd></div>
+          <div><dt>Sesja psychoterapii</dt><dd><span id="pv-session" class="pv-amount">220 zł</span> <span>50 min</span></dd></div>
+        </dl>
+        <p class="small" id="pv-contact">Telefon: <span id="pv-hours">pon.–pt., 12:00–13:00</span>. Odpowiedź zwykle w ciągu <span id="pv-reply">1–2</span> dni roboczych.</p>
       </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" type="submit" form="panel-form" id="panel-submit"><span>Zapisz i opublikuj</span> <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+    <div class="notice notice-ok toast" id="panel-toast" tabindex="-1" hidden role="status">
+      <div><h3>Opublikowano (makieta)</h3><p>W docelowym panelu zmiany pojawią się na stronie zwykle w ciągu kilku minut, a poprzednią wersję zawsze można przywrócić. W tej makiecie nic nie zostało zapisane.</p></div>
     </div>
   </aside>
 </div>

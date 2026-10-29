@@ -76,7 +76,7 @@
 
 /* ---------- Baza ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 6rem; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 9rem; }
 body {
   margin: 0;
   min-height: 100vh;
@@ -98,7 +98,7 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background: url("grain.svg");
-  opacity: 0.22;
+  opacity: 0.12;
   mix-blend-mode: multiply;
 }
 img, svg { display: block; max-width: 100%; }
@@ -154,7 +154,7 @@ a:hover { text-decoration-thickness: 2px; }
   border-radius: var(--radius-l);
   background: rgb(255 253 249 / 0.82);
   border: 1px solid rgb(230 217 203 / 0.9);
-  box-shadow: var(--shadow-soft);
+  box-shadow:  0 1px 2px rgb(60 35 20 / 0.05), 0 8px 20px -14px rgb(60 35 20 / 0.18);
   -webkit-backdrop-filter: saturate(1.4) blur(14px);
   backdrop-filter: saturate(1.4) blur(14px);
 }
@@ -232,7 +232,7 @@ main { display: block; }
 .photo span { padding: 0.5rem 0.875rem; border-radius: var(--radius-pill); background: rgb(255 253 249 / 0.85); font-size: 0.875rem; font-weight: 600; }
 .photo-portrait { aspect-ratio: 4 / 5; border-radius: 999px 999px var(--radius-l) var(--radius-l); }
 .photo-room { aspect-ratio: 3 / 2; border-radius: var(--radius-l); background: radial-gradient(120% 80% at 80% 0%, rgb(255 253 249 / 0.6), transparent 55%), linear-gradient(200deg, #DCE5D6 0%, #B9C9B5 55%, #9DB29C 100%); }
-.hero-media { position: relative; max-width: min(22rem, 82%); justify-self: center; width: 100%; }
+.hero-media { position: relative; max-width: min(15rem, 62%); justify-self: center; width: 100%; }
 .float-card {
   position: absolute; left: -0.5rem; bottom: 1.25rem;
   display: grid; gap: 0.125rem;
@@ -441,7 +441,7 @@ a.channel:hover { border-color: var(--field); }
 .toast { margin-top: var(--space-m); }
 
 /* ---------- Strona jednostronicowa: sekcje „tytuł + treść” ---------- */
-.block { padding-block: var(--space-xl); border-top: 1px solid var(--line); scroll-margin-top: 6.5rem; }
+.block { padding-block: var(--space-xl); border-top: 1px solid var(--line); }
 .block-grid { display: grid; gap: var(--space-m); }
 .block h2 { font-size: var(--step-3); }
 .block-body { min-width: 0; max-width: 42rem; }
@@ -450,10 +450,10 @@ a.channel:hover { border-color: var(--field); }
 .plain-list li { position: relative; padding-left: 1.5rem; }
 .plain-list li::before { content: ""; position: absolute; left: 0.25rem; top: 0.72em; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--clay); }
 .facts { display: grid; gap: 0; margin: 0; border-top: 1px solid var(--line); }
-.facts > div { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; padding-block: 0.875rem; border-bottom: 1px solid var(--line); }
+.facts > div { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.125rem; padding-block: 0.875rem; border-bottom: 1px solid var(--line); }
 .facts dt { font-weight: 600; color: var(--ink-2); font-size: var(--step--1); padding-top: 0.15em; }
-.facts dd { margin: 0; }
-.facts-wide > div { grid-template-columns: 8.5rem 1fr; }
+.facts dd { margin: 0; min-width: 0; overflow-wrap: break-word; }
+
 .steps-simple { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: var(--space-m); }
 .steps-simple li { counter-increment: s; display: grid; grid-template-columns: 2.75rem 1fr; gap: 1rem; align-items: start; }
 .steps-simple li::before {
@@ -463,7 +463,7 @@ a.channel:hover { border-color: var(--field); }
 .steps-simple strong { font-weight: 600; }
 .prices { display: grid; gap: 0; margin: 0; border-top: 1px solid var(--line); }
 .prices > div { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-block: 1rem; border-bottom: 1px solid var(--line); }
-.prices dt { font-weight: 500; }
+.prices dt { font-weight: 500; min-width: 0; }
 .prices dd { margin: 0; font-family: var(--font-display); font-size: var(--step-2); line-height: 1; white-space: nowrap; font-variant-numeric: lining-nums tabular-nums; }
 .prices dd span { font-family: var(--font-body); font-size: var(--step--1); color: var(--ink-2); margin-left: 0.5rem; }
 .rules-list { margin-top: var(--space-m); color: var(--ink-2); font-size: var(--step--1); }
@@ -481,15 +481,6 @@ a.channel:hover { border-color: var(--field); }
 /* ---------- Ruch (tylko gdy użytkownik nie ogranicza animacji) ---------- */
 @media (prefers-reduced-motion: no-preference) {
   @view-transition { navigation: auto; }
-  @supports (animation-timeline: view()) {
-    .reveal { animation: reveal linear both; animation-timeline: view(); animation-range: entry 5% cover 28%; }
-    @keyframes reveal { from { opacity: 0; transform: translateY(1.5rem); } to { opacity: 1; transform: none; } }
-  }
-  .hero h1, .hero .lead, .hero .actions, .hero-media { animation: rise 0.9s var(--ease) both; }
-  .hero .lead { animation-delay: 0.08s; }
-  .hero .actions { animation-delay: 0.16s; }
-  .hero-media { animation-delay: 0.12s; }
-  @keyframes rise { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: none; } }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
@@ -545,3 +536,13 @@ a.channel:hover { border-color: var(--field); }
 
 .h3-like { font-size: var(--step-1); }
 
+
+/* ---------- v2.1: poprawki po przeglądzie Codex ---------- */
+.demo-note { margin-bottom: var(--space-s); padding: 0.75rem 1rem; border-radius: var(--radius-s); border: 1.5px dashed var(--field); background: var(--sand); font-size: var(--step--1); }
+.form-title { font-family: var(--font-display); font-weight: 400; font-size: var(--step-2); margin-bottom: var(--space-s); }
+.block-contact .address { margin-top: var(--space-l); display: grid; gap: 0.375rem; }
+.block-contact .address h3 { font-size: var(--step-1); }
+/* Przy niskim oknie (np. duże powiększenie) nagłówek nie przykleja się, żeby nie zasłaniać treści */
+@media (max-height: 32rem) { .site-header { position: static; } html { scroll-padding-top: 1rem; } }
+@media (min-width: 56rem) { html { scroll-padding-top: 6.5rem; } .hero-media { max-width: 24rem; } }.prices dd span.pv-amount { font: inherit; color: inherit; margin: 0; }
+.panel-preview .form-actions { margin-top: var(--space-m); }

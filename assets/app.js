@@ -68,6 +68,7 @@
         input.setAttribute("aria-invalid", "true");
       } else {
         field.classList.remove("has-error");
+        err.textContent = "";
         input.removeAttribute("aria-invalid");
       }
       return text;
@@ -116,9 +117,12 @@
       submit.setAttribute("aria-busy", "true");
       var label = submit.querySelector("span");
       var original = label.textContent;
+      var status = document.getElementById("form-status");
       label.textContent = "Wysyłanie wiadomości…";
+      if (status) status.textContent = "Wysyłanie wiadomości…";
 
       window.setTimeout(function () {
+        if (status) status.textContent = "";
         if (simulateFailure) {
           simulateFailure = false;
           submit.disabled = false;
@@ -140,7 +144,8 @@
     var panel = document.getElementById("panel-form");
     if (!panel) return;
     var $ = function (id) { return document.getElementById(id); };
-    var fmt = function (n) { return Math.round(n).toLocaleString("pl-PL"); };
+    var fmt = function (n) { return n.toLocaleString("pl-PL", { maximumFractionDigits: 2 }); };
+    var errorsBox = $("panel-errors");
     var dateFmt = function (v) {
       if (!v) return "…";
       var d = new Date(v + "T12:00:00");
@@ -158,16 +163,55 @@
       var on = $("p-vac-on").checked;
       $("vac-fields").hidden = !on;
       $("pv-vacation").hidden = !on;
+      // W czasie urlopu zwykła obietnica czasu odpowiedzi jest zastąpiona komunikatem o powrocie.
+      $("pv-contact").hidden = on;
       $("pv-vac-title").textContent = "Przerwa urlopowa: " + dateFmt($("p-vac-from").value) + " – " + dateFmt($("p-vac-to").value);
       $("pv-vac-text").textContent = $("p-vac-text").value;
     }
+
+    function validate() {
+      var problems = [];
+      var cons = parseFloat($("p-consult").value);
+      var sess = parseFloat($("p-session").value);
+      if (!(cons > 0)) problems.push("Cena konsultacji musi być większa od zera.");
+      if (!(sess > 0)) problems.push("Cena sesji musi być większa od zera.");
+      var rmin = parseInt($("p-reply-min").value, 10), rmax = parseInt($("p-reply-max").value, 10);
+      if (!(rmin >= 1) || !(rmax >= 1)) problems.push("Czas odpowiedzi musi wynosić co najmniej 1 dzień roboczy.");
+      else if (rmin > rmax) problems.push("Czas odpowiedzi „od” nie może być większy niż „do”.");
+      if ($("p-vac-on").checked) {
+        var from = $("p-vac-from").value, to = $("p-vac-to").value;
+        if (!from || !to) problems.push("Podaj obie daty urlopu.");
+        else if (to < from) problems.push("Data zakończenia urlopu nie może być wcześniejsza niż data rozpoczęcia.");
+      }
+      return problems;
+    }
+
     panel.addEventListener("input", render);
     panel.addEventListener("change", render);
     panel.addEventListener("submit", function (e) {
       e.preventDefault();
       var toast = $("panel-toast");
-      toast.hidden = false;
-      toast.focus();
+      var problems = validate();
+      toast.hidden = true;
+      if (problems.length) {
+        var list = errorsBox.querySelector("ul");
+        list.innerHTML = "";
+        problems.forEach(function (t) { var li = document.createElement("li"); li.textContent = t; list.appendChild(li); });
+        errorsBox.hidden = false;
+        errorsBox.focus();
+        return;
+      }
+      errorsBox.hidden = true;
+      var btn = $("panel-submit");
+      var label = btn.querySelector("span");
+      btn.disabled = true;
+      label.textContent = "Publikuję…";
+      window.setTimeout(function () {
+        btn.disabled = false;
+        label.textContent = "Zapisz i opublikuj";
+        toast.hidden = false;
+        toast.focus();
+      }, 1200);
     });
     render();
   }

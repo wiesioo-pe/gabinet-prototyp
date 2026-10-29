@@ -152,7 +152,7 @@
       var sess = parseFloat($("p-session").value) || 0;
       $("pv-consult").textContent = fmt(cons) + " zł";
       $("pv-session").textContent = fmt(sess) + " zł";
-      $("pv-month").textContent = fmt(sess * 4) + "–" + fmt(sess * 5) + " zł";
+      
       $("pv-hours").textContent = $("p-hours").value || "…";
       $("pv-reply").textContent = ($("p-reply-min").value || "1") + "–" + ($("p-reply-max").value || "2");
       var on = $("p-vac-on").checked;

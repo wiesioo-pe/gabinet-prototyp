@@ -440,6 +440,44 @@ a.channel:hover { border-color: var(--field); }
 .preview-label { font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); margin-bottom: var(--space-s); }
 .toast { margin-top: var(--space-m); }
 
+/* ---------- Strona jednostronicowa: sekcje „tytuł + treść” ---------- */
+.block { padding-block: var(--space-xl); border-top: 1px solid var(--line); scroll-margin-top: 6.5rem; }
+.block-grid { display: grid; gap: var(--space-m); }
+.block h2 { font-size: var(--step-3); }
+.block-body { min-width: 0; max-width: 42rem; }
+.block-body > p:first-child { font-size: var(--step-1); line-height: 1.5; }
+.plain-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.5rem; }
+.plain-list li { position: relative; padding-left: 1.5rem; }
+.plain-list li::before { content: ""; position: absolute; left: 0.25rem; top: 0.72em; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--clay); }
+.facts { display: grid; gap: 0; margin: 0; border-top: 1px solid var(--line); }
+.facts > div { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; padding-block: 0.875rem; border-bottom: 1px solid var(--line); }
+.facts dt { font-weight: 600; color: var(--ink-2); font-size: var(--step--1); padding-top: 0.15em; }
+.facts dd { margin: 0; }
+.facts-wide > div { grid-template-columns: 8.5rem 1fr; }
+.steps-simple { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: var(--space-m); }
+.steps-simple li { counter-increment: s; display: grid; grid-template-columns: 2.75rem 1fr; gap: 1rem; align-items: start; }
+.steps-simple li::before {
+  content: counter(s); display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%;
+  background: var(--clay-soft); color: var(--clay-text); font-family: var(--font-display); font-size: 1.25rem;
+}
+.steps-simple strong { font-weight: 600; }
+.prices { display: grid; gap: 0; margin: 0; border-top: 1px solid var(--line); }
+.prices > div { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-block: 1rem; border-bottom: 1px solid var(--line); }
+.prices dt { font-weight: 500; }
+.prices dd { margin: 0; font-family: var(--font-display); font-size: var(--step-2); line-height: 1; white-space: nowrap; font-variant-numeric: lining-nums tabular-nums; }
+.prices dd span { font-family: var(--font-body); font-size: var(--step--1); color: var(--ink-2); margin-left: 0.5rem; }
+.rules-list { margin-top: var(--space-m); color: var(--ink-2); font-size: var(--step--1); }
+.contact-lines { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--space-m); }
+.contact-lines li { display: grid; gap: 0.125rem; }
+.contact-lines span { font-size: var(--step--1); font-weight: 600; color: var(--ink-2); }
+.contact-lines a[href^="tel"], .contact-lines a[href^="mailto"] { font-family: var(--font-display); font-size: var(--step-1); color: var(--ink); text-decoration-color: var(--clay); }
+.contact-lines small { font-size: var(--step--1); color: var(--ink-2); }
+.form-plain { padding: var(--space-l) var(--space-m); border-radius: var(--radius-l); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-soft); }
+.block-contact .crisis { margin-top: var(--space-m); }
+.contact-intro h2 { position: static; }
+.footer-brand { font-size: var(--step-2); }
+.block-contact .notice { margin-bottom: var(--space-s); }
+
 /* ---------- Ruch (tylko gdy użytkownik nie ogranicza animacji) ---------- */
 @media (prefers-reduced-motion: no-preference) {
   @view-transition { navigation: auto; }
@@ -493,9 +531,13 @@ a.channel:hover { border-color: var(--field); }
   .split { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
   .split.reverse > :first-child { order: 2; }
   .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: var(--space-xl); align-items: start; }
+  .block-grid { grid-template-columns: minmax(12rem, 1fr) 2fr; gap: var(--space-xl); align-items: start; }
+  .block h2 { position: sticky; top: 7.5rem; }
+  .contact-intro { position: sticky; top: 7.5rem; }
+  .block-contact .block-body { max-width: none; }
   .contact-aside { position: sticky; top: 7rem; }
   .cta-card { grid-template-columns: 1fr auto; align-items: center; padding: var(--space-xl) var(--space-l); }
-  .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; align-items: start; }
   .panel-shell { grid-template-columns: 1.1fr 0.9fr; align-items: start; }
   .panel-preview { position: sticky; top: 7rem; }
   .form-card, .panel-card { padding: var(--space-l); }

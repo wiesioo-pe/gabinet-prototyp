@@ -216,7 +216,32 @@
     render();
   }
 
+  // --- Warianty do porównania przez klientkę: krój tytułów i tło (też przez ?font=…&bg=…) ---
+  function initVariants() {
+    var root = document.documentElement;
+    var params = new URLSearchParams(window.location.search);
+    [["font", "data-set-font", "proto-font"], ["bg", "data-set-bg", "proto-bg"]].forEach(function (v) {
+      var key = v[0], attr = v[1], storeKey = v[2];
+      var value = params.get(key) || store.get(storeKey);
+      var buttons = document.querySelectorAll("[" + attr + "]");
+      var apply = function (val) {
+        if (!val) return;
+        root.setAttribute("data-" + key, val);
+        buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute(attr) === val)); });
+      };
+      apply(value || root.getAttribute("data-" + key));
+      buttons.forEach(function (b) {
+        b.addEventListener("click", function () {
+          var val = b.getAttribute(attr);
+          store.set(storeKey, val);
+          apply(val);
+        });
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    initVariants();
     initVacation();
     initContactForm();
     initPanel();

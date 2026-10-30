@@ -1,23 +1,25 @@
 <!doctype html>
-<html lang="pl">
+<html lang="pl" data-font="cormorant" data-bg="trawa">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Psychoterapia psychodynamiczna w Trójmieście · Marta [Nazwisko]</title>
-<meta name="description" content="Psychoterapia psychodynamiczna dla dorosłych w Trójmieście. Jak pracuję, jak zacząć, cennik, kwalifikacje i kontakt.">
+<title>Psychoterapia psychoanalityczna w Trójmieście · Marta [Nazwisko]</title>
+<meta name="description" content="Psychoterapia psychoanalityczna dla dorosłych w Trójmieście. Jak pracuję, jak zacząć, cennik, kwalifikacje i kontakt.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#FBF6F0">
-<link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#F4EDE3">
+<link rel="preload" href="fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/styles.css?v=202610291829">
-<script src="assets/app.js?v=202610291829" defer></script>
+<link rel="stylesheet" href="assets/styles.css?v=202610301745">
+<script src="assets/app.js?v=202610301745" defer></script>
 </head>
 <body class="">
 <a class="skip-link" href="#tresc">Przejdź do treści</a>
 <div class="proto-bar">
   <div class="wrap">
     <p><strong>PROTOTYP</strong> · treści, ceny i dane są przykładowe</p>
-    <p><a href="panel.html">Podgląd panelu edycji</a> · <a href="?urlop=1" data-toggle-vacation>Pokaż komunikat o urlopie</a>· <a href="#kontakt" data-simulate-failure>Symuluj błąd wysyłki</a></p>
+    <p class="proto-switch" aria-label="Krój tytułów">Krój: <button type="button" data-set-font="cormorant">Cormorant</button><button type="button" data-set-font="marcellus">Marcellus</button><button type="button" data-set-font="gilda">Gilda</button></p>
+    <p class="proto-switch" aria-label="Tło strony">Tło: <button type="button" data-set-bg="trawa">trawa</button><button type="button" data-set-bg="kwiaty">kwiaty</button><button type="button" data-set-bg="brak">bez zdjęcia</button></p>
+    <p><a href="panel.html">Panel edycji</a> · <a href="?urlop=1" data-toggle-vacation>Pokaż komunikat o urlopie</a>· <a href="#kontakt" data-simulate-failure>Symuluj błąd wysyłki</a></p>
   </div>
 </div>
 <header class="site-header">
@@ -25,7 +27,7 @@
     <nav class="nav-shell" aria-label="Menu główne">
       <a class="brand" href="index.html">
         <span class="brand-name">Marta [Nazwisko]</span>
-        <span class="brand-role">Psychoterapia psychodynamiczna</span>
+        <span class="brand-role">Psychoterapia psychoanalityczna</span>
       </a>
       <a class="btn btn-small header-contact" href="index.html#kontakt">Kontakt</a>
       <ul class="nav-list">
@@ -43,8 +45,8 @@
   <div class="wrap hero-grid">
     <div>
       <p class="eyebrow">Marta [Nazwisko] · Trójmiasto</p>
-      <h1 id="hero-title">Psychoterapia <em>psychodynamiczna</em> w&nbsp;Trójmieście</h1>
-      <p class="lead">Pracuję z dorosłymi, którzy chcą lepiej zrozumieć siebie, swoje emocje i relacje.</p>
+      <h1 id="hero-title">Psychoterapia <em>psychoanalityczna</em> w&nbsp;Trójmieście</h1>
+      <p class="lead">Pracuję z dorosłymi, którzy chcą lepiej zrozumieć siebie, swoje emocje i relacje. Spotkania odbywają się w gabinecie.</p>
       <div class="notice notice-vacation" data-vacation hidden role="status">
         <div><h2>Przerwa urlopowa: 2–8 listopada 2026</h2><p>W tym czasie nie odpowiadam na wiadomości i telefony. Do wiadomości wrócę od 9 listopada.</p></div>
       </div>
@@ -79,7 +81,7 @@
   <div class="wrap block-grid">
     <h2 id="jak-title">Jak pracuję</h2>
     <div class="block-body stack">
-      <p>Terapia psychodynamiczna to rozmowa, w której razem próbujemy zrozumieć, skąd biorą się trudności. Przyglądamy się emocjom, powtarzającym się sytuacjom w relacjach i temu, jak wcześniejsze doświadczenia wpływają na teraźniejszość.</p>
+      <p>Pracuję w nurcie psychoanalitycznym. Terapia to rozmowa, w której razem próbujemy zrozumieć, skąd biorą się trudności. Przyglądamy się emocjom, powtarzającym się sytuacjom w relacjach i temu, jak wcześniejsze doświadczenia wpływają na teraźniejszość.</p>
       <p>Nie daję gotowych rad. Celem pracy jest lepsze rozumienie siebie i większa swoboda w reagowaniu.</p>
       <p class="muted">Rozmowy są poufne. Granice tajemnicy zawodowej omawiam na pierwszym spotkaniu.</p>
     </div>
@@ -92,7 +94,7 @@
     <div class="block-body">
       <ol class="steps-simple">
         <li><span><strong>Kontakt.</strong> Przez formularz, telefon lub e-mail.</span></li>
-        <li><span><strong>Konsultacje.</strong> Zwykle 2–3 spotkania, na których rozmawiamy o powodach zgłoszenia i oczekiwaniach.</span></li>
+        <li><span><strong>Sesje konsultacyjne.</strong> Terapię poprzedzają płatne konsultacje, zwykle 2–3 spotkania. Rozmawiamy o powodach zgłoszenia, oczekiwaniach i częstotliwości sesji.</span></li>
         <li><span><strong>Wspólna decyzja.</strong> Omawiam możliwą formę pomocy. Konsultacje nie zobowiązują do rozpoczęcia terapii.</span></li>
       </ol>
     </div>
@@ -105,10 +107,10 @@
     <div class="block-body stack">
       <dl class="prices">
         <div><dt>Konsultacja</dt><dd>220 zł <span>50 min</span></dd></div>
-        <div><dt>Sesja psychoterapii<small>zwykle raz w tygodniu, w stałym terminie</small></dt><dd>220 zł <span>50 min</span></dd></div>
+        <div><dt>Sesja psychoterapii<small>1, 2 lub 3 razy w tygodniu, w stałych terminach</small></dt><dd>220 zł <span>50 min</span></dd></div>
       </dl>
       <ul class="plain-list rules-list">
-        <li>Konsultacje są płatne tak jak sesje.</li>
+        <li>Konsultacje są płatne tak jak sesje. Częstotliwość sesji ustalamy wspólnie na konsultacjach.</li>
         <li>Spotkanie można odwołać bez opłaty najpóźniej 24 godziny wcześniej. Później odwołane lub nieodbyte spotkanie jest płatne.</li>
         <li>Płatność przelewem lub na miejscu, w dniu spotkania.</li>
         <li>Za moje urlopy i nieobecności nie pobieram opłat. Zasady dotyczące urlopów osoby w terapii omawiamy przed jej rozpoczęciem.</li>
@@ -123,10 +125,10 @@
   <div class="wrap block-grid">
     <h2 id="omnie-title">O mnie</h2>
     <div class="block-body stack">
-      <p>Jestem psycholożką i psychoterapeutką pracującą w nurcie psychodynamicznym.</p>
+      <p>Jestem psycholożką i psychoterapeutką pracującą w nurcie psychoanalitycznym.</p>
       <dl class="facts">
         <div><dt>Wykształcenie</dt><dd>Psychologia, [uczelnia]</dd></div>
-        <div><dt>Szkolenie</dt><dd>[Szkoła psychoterapii psychodynamicznej], [ukończona / w trakcie]</dd></div>
+        <div><dt>Szkolenie</dt><dd>[Szkoła psychoterapii psychoanalitycznej], [ukończona / w trakcie]</dd></div>
         <div><dt>Certyfikat</dt><dd>[Organizacja, rok]</dd></div>
         <div><dt>Członkostwo</dt><dd>[Organizacja zawodowa]</dd></div>
         <div><dt>Superwizja</dt><dd>Regularna; kodeks etyczny [organizacji]</dd></div>
@@ -207,7 +209,7 @@
     <div class="footer-grid">
       <div class="stack">
         <p class="footer-brand">Marta [Nazwisko]</p>
-        <p class="small">Psychoterapia psychodynamiczna dla dorosłych · Trójmiasto</p>
+        <p class="small">Psychoterapia psychoanalityczna dla dorosłych · Trójmiasto</p>
         <ul class="footer-list">
           <li><a href="tel:+48500000000">+48 500 000 000</a></li>
           <li><a href="mailto:kontakt@przyklad.pl">kontakt@przyklad.pl</a></li>

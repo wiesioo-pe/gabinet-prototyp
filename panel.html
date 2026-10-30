@@ -1,23 +1,25 @@
 <!doctype html>
-<html lang="pl">
+<html lang="pl" data-font="cormorant" data-bg="trawa">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Panel strony (makieta) · Marta [Nazwisko]</title>
 <meta name="description" content="Makieta panelu do aktualizacji cen, godzin kontaktu i komunikatu o urlopie.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#FBF6F0">
-<link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#F4EDE3">
+<link rel="preload" href="fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/styles.css?v=202610291829">
-<script src="assets/app.js?v=202610291829" defer></script>
+<link rel="stylesheet" href="assets/styles.css?v=202610301745">
+<script src="assets/app.js?v=202610301745" defer></script>
 </head>
 <body class="panel-page">
 <a class="skip-link" href="#tresc">Przejdź do treści</a>
 <div class="proto-bar">
   <div class="wrap">
     <p><strong>PROTOTYP</strong> · treści, ceny i dane są przykładowe</p>
-    <p><a href="panel.html">Podgląd panelu edycji</a> · <a href="?urlop=1" data-toggle-vacation>Pokaż komunikat o urlopie</a></p>
+    <p class="proto-switch" aria-label="Krój tytułów">Krój: <button type="button" data-set-font="cormorant">Cormorant</button><button type="button" data-set-font="marcellus">Marcellus</button><button type="button" data-set-font="gilda">Gilda</button></p>
+    <p class="proto-switch" aria-label="Tło strony">Tło: <button type="button" data-set-bg="trawa">trawa</button><button type="button" data-set-bg="kwiaty">kwiaty</button><button type="button" data-set-bg="brak">bez zdjęcia</button></p>
+    <p><a href="panel.html">Panel edycji</a> · <a href="?urlop=1" data-toggle-vacation>Pokaż komunikat o urlopie</a></p>
   </div>
 </div>
 

@@ -220,7 +220,7 @@
   function initVariants() {
     var root = document.documentElement;
     var params = new URLSearchParams(window.location.search);
-    [["font", "data-set-font", "proto-font"], ["bg", "data-set-bg", "proto-bg"]].forEach(function (v) {
+    [["font", "data-set-font", "proto-font"], ["bg", "data-set-bg", "proto-bg"], ["palette", "data-set-palette", "proto-palette"]].forEach(function (v) {
       var key = v[0], attr = v[1], storeKey = v[2];
       var value = params.get(key) || store.get(storeKey);
       var buttons = document.querySelectorAll("[" + attr + "]");

@@ -668,3 +668,57 @@ html { scroll-padding-top: 4.5rem; }
 /* Niskie okno (np. duże powiększenie): pasek się nie przykleja */
 @media (max-height: 32rem) { .topbar { position: static; } html { scroll-padding-top: 1rem; } }
 .prices dt small { display: block; margin-top: 0.125rem; font-weight: 400; color: var(--ink-2); }
+
+/* =====================================================================
+   Warianty kolorów do wyboru w prototypie (01.11.2026). „Oryginalne” to
+   paleta v3 powyżej; dwie alternatywy zmieniają tylko tokeny i kilka
+   kolorów zapisanych na sztywno. Kontrasty sprawdzone (WCAG 2.2 AA).
+   ===================================================================== */
+/* Terakota: boho, więcej ciepła i charakteru; przyciski 5,9:1, akcent 6,9:1 */
+html[data-palette="terakota"] {
+  --bg: #F5ECE2;
+  --sand: #EEDDCC;
+  --surface: #FDF8F2;
+  --ink: #2E211B;
+  --ink-2: #5E4A40;
+  --clay: #9A4A2E;
+  --clay-text: #8A4129;
+  --clay-soft: #F2DACA;
+  --line: #E6D0BE;
+  --field: #8C6F5D;
+  --night: #3D2620;
+  --cream: #F8EEE4;
+  --panel: rgb(253 248 242 / 0.9);
+}
+html[data-palette="terakota"] body::after { background: linear-gradient(rgb(245 228 214 / 0.38), rgb(245 228 214 / 0.38)), url("img/tlo-trawa.jpg") center / cover no-repeat; }
+html[data-palette="terakota"][data-bg="kwiaty"] body::after { background: linear-gradient(rgb(245 228 214 / 0.38), rgb(245 228 214 / 0.38)), url("img/tlo-kwiaty.jpg") center / cover no-repeat; }
+html[data-palette="terakota"] .photo { background: linear-gradient(160deg, #F6E3D5 0%, #E8C3AC 55%, #D2A088 100%); }
+html[data-palette="terakota"] .topbar { background: rgb(253 248 242 / 0.95); }
+html[data-palette="terakota"] .btn:hover { box-shadow: 0 10px 24px -12px rgb(154 74 46 / 0.6); }
+html[data-palette="terakota"] .footer-title, html[data-palette="terakota"] .footer-legal { color: #E6CDBD; }
+
+/* Oliwka i miód: naturalnie i spokojnie, ciepła zieleń zamiast chłodnej;
+   przyciski 6,0:1, miodowy akcent w tytule 5,6:1 */
+html[data-palette="oliwka"] {
+  --bg: #F2EEE3;
+  --sand: #E6E1CF;
+  --surface: #FBF9F2;
+  --ink: #24281F;
+  --ink-2: #52564A;
+  --clay: #56653A;
+  --clay-text: #4E5C33;
+  --clay-soft: #E2E6CF;
+  --line: #DAD5C1;
+  --field: #7A7862;
+  --night: #2E3424;
+  --cream: #F4F1E6;
+  --panel: rgb(251 249 242 / 0.9);
+}
+html[data-palette="oliwka"] body::after { background: linear-gradient(rgb(242 238 227 / 0.38), rgb(242 238 227 / 0.38)), url("img/tlo-trawa.jpg") center / cover no-repeat; }
+html[data-palette="oliwka"][data-bg="kwiaty"] body::after { background: linear-gradient(rgb(242 238 227 / 0.38), rgb(242 238 227 / 0.38)), url("img/tlo-kwiaty.jpg") center / cover no-repeat; }
+html[data-palette="oliwka"] .hero h1 em { color: #8A5A1C; }
+html[data-palette="oliwka"] .photo { background: linear-gradient(160deg, #F1EEDF 0%, #DCDCC1 55%, #BFC29E 100%); }
+html[data-palette="oliwka"] .topbar { background: rgb(251 249 242 / 0.95); }
+html[data-palette="oliwka"] .btn:hover { box-shadow: 0 10px 24px -12px rgb(86 101 58 / 0.6); }
+html[data-palette="oliwka"] .footer-title, html[data-palette="oliwka"] .footer-legal { color: #D8D6C2; }
+html[data-palette][data-bg="brak"] body::after { background: none; }

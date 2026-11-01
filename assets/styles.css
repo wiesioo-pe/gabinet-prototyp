@@ -629,123 +629,9 @@ html { scroll-padding-top: 1rem; }
 .proto-switch button[aria-pressed="true"] { background: var(--cream); color: var(--night); }
 @media (min-width: 56rem) { .block h2, .contact-intro { top: 1.5rem; } }
 
-/* =====================================================================
-   v4: paleta z propozycji Marty (01.11.2026): ciemna zieleń, ciepły kamień,
-   kość słoniowa, zgaszona szałwia. Kamień i szałwia: tylko akcenty
-   (za niski kontrast na tekst); do tekstu ciemniejsze odcienie (WCAG AA).
-   ===================================================================== */
-:root {
-  --green: #273D3A;
-  --stone: #A78C77;        /* tylko dekoracja: linie, punkty */
-  --stone-text: #7A6352;   /* kamień do tekstu: 5,2:1 */
-  --sage: #667169;
-  --sage-soft: #DDE2DD;
-
-  --bg: #EEEDE8;
-  --sand: #E4E2DA;
-  --surface: #F7F6F2;
-  --ink: #1F2E2B;
-  --ink-2: #4F5B55;
-  --clay: #273D3A;
-  --clay-text: #273D3A;
-  --clay-soft: #DDE2DD;
-  --line: #D9D6CD;
-  --field: #6F7A73;
-  --focus: #273D3A;
-  --night: #273D3A;
-  --cream: #EEEDE8;
-  --panel: rgb(247 246 242 / 0.92);
-}
-h1, h2, .brand-name, .footer-brand, .form-title { color: var(--green); }
-.site-footer .footer-brand { color: var(--cream); }
-a { color: var(--green); text-decoration-color: var(--stone); }
-a:hover { text-decoration-color: var(--green); }
-.hero h1 em { color: var(--stone-text); }
-
-/* Kierunek typograficzny z projektu: nazwisko szeryfem, specjalizacja wersalikami bezszeryfowo */
-.brand-role { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.6875rem; color: var(--ink-2); }
-.eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8125rem; color: var(--ink-2); }
-.eyebrow::before { background: var(--stone); height: 1.5px; width: 2.5rem; }
-.hero .lead { color: var(--ink-2); }
-.block h2::after { content: ""; display: block; width: 3rem; height: 1.5px; margin-top: 0.75rem; background: var(--stone); }
-.contact-intro h2::after { content: none; }
-
-/* Akcenty: kamień w punktorach i liniach, zieleń w przyciskach, szałwia w tłach */
-.plain-list li::before { background: var(--stone); }
-.steps-simple li::before { background: var(--sage-soft); color: var(--green); }
-.btn { --btn-bg: var(--green); --btn-fg: var(--surface); }
-.btn:hover { box-shadow: 0 10px 24px -12px rgb(39 61 58 / 0.55); }
-.btn-ghost { --btn-bg: transparent; --btn-fg: var(--green); border-color: var(--field); }
-.nav-list a:hover, .nav-list a[aria-current="page"] { background: var(--sage-soft); }
-.notice-vacation { background: var(--sage-soft); border-color: var(--green); }
-.crisis { border-left-color: var(--stone); }
-.crisis .numbers a { background: var(--sage-soft); color: var(--green); }
-.crisis .numbers a:hover { background: #CFD6CF; }
-.demo-note { background: var(--sand); }
-
-/* Tło: ten sam zestaw zdjęć, przygaszony w stronę kości słoniowej */
-body::after { background: linear-gradient(rgb(238 237 232 / 0.5), rgb(238 237 232 / 0.5)), url("img/tlo-trawa.jpg") center / cover no-repeat; }
-html[data-bg="kwiaty"] body::after { background: linear-gradient(rgb(238 237 232 / 0.5), rgb(238 237 232 / 0.5)), url("img/tlo-kwiaty.jpg") center / cover no-repeat; }
-html[data-bg="brak"] body::after { background: none; }
-.photo { background: linear-gradient(160deg, #EEEDE8 0%, #DDE2DD 50%, #B9C2BB 100%); }
-.photo span { color: var(--green); }
-
-/* Stopka i pasek prototypu w ciemnej zieleni */
-.site-footer { background: var(--green); }
-.footer-title, .footer-legal { color: #D9CFC4; }
-.footer-crisis { background: rgb(238 237 232 / 0.08); border-color: rgb(238 237 232 / 0.22); }
-.footer-legal { border-top-color: rgb(238 237 232 / 0.2); }
-.proto-bar { background: #1E2F2C; }
 /* Numer i e-mail: krój tekstowy z cyframi równej wysokości (łatwiej przepisać) */
 .contact-lines a[href^="tel"], .contact-lines a[href^="mailto"] { font-family: var(--font-body); font-weight: 500; font-size: var(--step-0); font-variant-numeric: lining-nums tabular-nums; }
 .contact-lines { margin-top: var(--space-s); }
-
-/* =====================================================================
-   v5: cieplej (uwaga użytkownika 01.11.2026). Paleta Marty zostaje, ale:
-   zieleń tylko w nagłówkach i nazwisku; przyciski, linki i akcenty w ciepłym
-   kamieniu; tła w ciepłej kości słoniowej; stopka w ciepłym taupe.
-   ===================================================================== */
-:root {
-  --bg: #F3EDE4;
-  --sand: #EDE4D9;
-  --surface: #FBF8F3;
-  --panel: rgb(251 248 243 / 0.92);
-  --ink: #2B2622;
-  --ink-2: #5C524A;
-  --line: #E4D9CC;
-  --field: #857463;
-  --stone-soft: #EBDFD2;
-  --clay: #7E604B;          /* przyciski: ciepły kamień, 5,4:1 z jasnym tekstem */
-  --clay-text: #7A6352;
-  --clay-soft: #EBDFD2;
-  --focus: #7E604B;
-  --night: #4A3E36;
-  --cream: #F6F0E7;
-}
-a { color: var(--stone-text); text-decoration-color: var(--stone); }
-a:hover { text-decoration-color: var(--stone-text); }
-.btn { --btn-bg: #7E604B; --btn-fg: var(--surface); }
-.btn:hover { background: #6E523F; border-color: #6E523F; box-shadow: 0 10px 24px -12px rgb(126 96 75 / 0.6); }
-.btn-ghost { --btn-bg: transparent; --btn-fg: var(--stone-text); border-color: var(--stone); }
-.btn-ghost:hover { background: var(--stone-soft); border-color: var(--stone-text); }
-.nav-list a:hover, .nav-list a[aria-current="page"] { background: var(--stone-soft); }
-.steps-simple li::before { background: var(--stone-soft); color: var(--green); }
-.notice-vacation { background: var(--stone-soft); border-color: var(--stone-text); }
-.crisis .numbers a { background: var(--stone-soft); color: var(--ink); }
-.crisis .numbers a:hover { background: #E2D3C3; }
-.contact-lines a[href^="tel"], .contact-lines a[href^="mailto"] { color: var(--ink); }
-
-/* Tło: ciepła kość słoniowa nad zdjęciem; kadr portretu w ciepłych tonach */
-body::after { background: linear-gradient(rgb(243 237 228 / 0.42), rgb(243 237 228 / 0.42)), url("img/tlo-trawa.jpg") center / cover no-repeat; }
-html[data-bg="kwiaty"] body::after { background: linear-gradient(rgb(243 237 228 / 0.42), rgb(243 237 228 / 0.42)), url("img/tlo-kwiaty.jpg") center / cover no-repeat; }
-html[data-bg="brak"] body::after { background: none; }
-.photo { background: linear-gradient(160deg, #F6F0E7 0%, #EBDFD2 50%, #D6C3B1 100%); }
-.photo span { color: var(--ink); }
-
-/* Stopka i pasek prototypu: ciepłe taupe zamiast zieleni */
-.site-footer { background: #4A3E36; }
-.footer-title, .footer-legal { color: #DCCDBE; }
-.proto-bar { background: #3B312B; }
 
 /* =====================================================================
    v6: mały pasek przyklejony na samej górze ekranu (nazwisko, specjalizacja,
@@ -754,14 +640,14 @@ html[data-bg="brak"] body::after { background: none; }
    ===================================================================== */
 .topbar {
   position: sticky; top: 0; z-index: 50;
-  background: rgb(251 248 243 / 0.95);
+  background: rgb(251 247 241 / 0.95);
   -webkit-backdrop-filter: saturate(1.2) blur(10px); backdrop-filter: saturate(1.2) blur(10px);
   border-bottom: 1px solid var(--line);
 }
 .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; min-height: 3.25rem; padding-block: 0.375rem; }
 .topbar .brand { display: grid; gap: 0; min-width: 0; line-height: 1.15; text-decoration: none; }
 .topbar .brand-name { font-size: 1.125rem; }
-.topbar .brand-role { font-size: 0.625rem; }
+.topbar .brand-role { font-size: 0.75rem; }
 .topbar .btn-small { min-height: 2.5rem; padding: 0.375rem 1rem; flex: none; }
 .subnav { padding-block: 0.5rem 0; }
 .subnav .nav-list { border-top: 0; padding: 0; justify-content: center; gap: 0.25rem; flex-wrap: wrap; }
@@ -771,7 +657,7 @@ html[data-bg="brak"] body::after { background: none; }
 @media (min-width: 48rem) {
   .topbar .brand { display: flex; align-items: baseline; gap: 0.875rem; }
   .topbar .brand-name { font-size: 1.25rem; }
-  .topbar .brand-role { font-size: 0.6875rem; }
+  .topbar .brand-role { font-size: 0.8125rem; }
 }
 /* Kotwice: odsunięcie o wysokość paska */
 html { scroll-padding-top: 4.5rem; }
@@ -781,4 +667,4 @@ html { scroll-padding-top: 4.5rem; }
 }
 /* Niskie okno (np. duże powiększenie): pasek się nie przykleja */
 @media (max-height: 32rem) { .topbar { position: static; } html { scroll-padding-top: 1rem; } }
-.prices dt small { display: block; margin-top: 0.125rem; font-weight: 400; color: var(--muted); }
+.prices dt small { display: block; margin-top: 0.125rem; font-weight: 400; color: var(--ink-2); }

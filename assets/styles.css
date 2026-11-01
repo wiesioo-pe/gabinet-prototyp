@@ -699,3 +699,50 @@ html[data-bg="brak"] body::after { background: none; }
 /* Numer i e-mail: krój tekstowy z cyframi równej wysokości (łatwiej przepisać) */
 .contact-lines a[href^="tel"], .contact-lines a[href^="mailto"] { font-family: var(--font-body); font-weight: 500; font-size: var(--step-0); font-variant-numeric: lining-nums tabular-nums; }
 .contact-lines { margin-top: var(--space-s); }
+
+/* =====================================================================
+   v5: cieplej (uwaga użytkownika 01.11.2026). Paleta Marty zostaje, ale:
+   zieleń tylko w nagłówkach i nazwisku; przyciski, linki i akcenty w ciepłym
+   kamieniu; tła w ciepłej kości słoniowej; stopka w ciepłym taupe.
+   ===================================================================== */
+:root {
+  --bg: #F3EDE4;
+  --sand: #EDE4D9;
+  --surface: #FBF8F3;
+  --panel: rgb(251 248 243 / 0.92);
+  --ink: #2B2622;
+  --ink-2: #5C524A;
+  --line: #E4D9CC;
+  --field: #857463;
+  --stone-soft: #EBDFD2;
+  --clay: #7E604B;          /* przyciski: ciepły kamień, 5,4:1 z jasnym tekstem */
+  --clay-text: #7A6352;
+  --clay-soft: #EBDFD2;
+  --focus: #7E604B;
+  --night: #4A3E36;
+  --cream: #F6F0E7;
+}
+a { color: var(--stone-text); text-decoration-color: var(--stone); }
+a:hover { text-decoration-color: var(--stone-text); }
+.btn { --btn-bg: #7E604B; --btn-fg: var(--surface); }
+.btn:hover { background: #6E523F; border-color: #6E523F; box-shadow: 0 10px 24px -12px rgb(126 96 75 / 0.6); }
+.btn-ghost { --btn-bg: transparent; --btn-fg: var(--stone-text); border-color: var(--stone); }
+.btn-ghost:hover { background: var(--stone-soft); border-color: var(--stone-text); }
+.nav-list a:hover, .nav-list a[aria-current="page"] { background: var(--stone-soft); }
+.steps-simple li::before { background: var(--stone-soft); color: var(--green); }
+.notice-vacation { background: var(--stone-soft); border-color: var(--stone-text); }
+.crisis .numbers a { background: var(--stone-soft); color: var(--ink); }
+.crisis .numbers a:hover { background: #E2D3C3; }
+.contact-lines a[href^="tel"], .contact-lines a[href^="mailto"] { color: var(--ink); }
+
+/* Tło: ciepła kość słoniowa nad zdjęciem; kadr portretu w ciepłych tonach */
+body::after { background: linear-gradient(rgb(243 237 228 / 0.42), rgb(243 237 228 / 0.42)), url("img/tlo-trawa.jpg") center / cover no-repeat; }
+html[data-bg="kwiaty"] body::after { background: linear-gradient(rgb(243 237 228 / 0.42), rgb(243 237 228 / 0.42)), url("img/tlo-kwiaty.jpg") center / cover no-repeat; }
+html[data-bg="brak"] body::after { background: none; }
+.photo { background: linear-gradient(160deg, #F6F0E7 0%, #EBDFD2 50%, #D6C3B1 100%); }
+.photo span { color: var(--ink); }
+
+/* Stopka i pasek prototypu: ciepłe taupe zamiast zieleni */
+.site-footer { background: #4A3E36; }
+.footer-title, .footer-legal { color: #DCCDBE; }
+.proto-bar { background: #3B312B; }

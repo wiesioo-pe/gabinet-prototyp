@@ -655,10 +655,8 @@ html { scroll-padding-top: 1rem; }
 .topbar .brand-name { font-size: 1.125rem; }
 .topbar .brand-role { font-size: 0.75rem; }
 .topbar .btn-small { min-height: 2.5rem; padding: 0.375rem 1rem; flex: none; }
-.subnav .nav-list { display: flex; flex-wrap: wrap; gap: 0.25rem; padding: 0 0 0.125rem; border-top: 0; justify-content: flex-start; }
-@media (min-width: 56rem) { .subnav .nav-list { justify-content: flex-end; } .subnav .nav-list li:first-child { margin-left: 0; } .subnav .nav-list li:last-child { margin-right: -0.75rem; } }
-.subnav .nav-list a, .subnav .nav-list li:first-child a { padding-inline: 0.75rem; }
-.subnav .nav-list li:first-child { margin-left: -0.75rem; }
+.subnav .nav-list { display: flex; flex-wrap: wrap; gap: 0.25rem; padding: 0 0 0.125rem; border-top: 0; justify-content: center; }
+.subnav .nav-list a, .subnav .nav-list li:first-child a { padding-inline: 0.875rem; }
 @media (min-width: 48rem) {
   .topbar .brand { display: flex; align-items: baseline; gap: 0.875rem; }
   .topbar .brand-name { font-size: 1.25rem; }
@@ -703,28 +701,46 @@ html[data-palette="terakota"] { --bar-bg: rgb(253 248 242 / 0.95); }
 html[data-palette="terakota"] .btn:hover { box-shadow: 0 10px 24px -12px rgb(154 74 46 / 0.6); }
 html[data-palette="terakota"] .footer-title, html[data-palette="terakota"] .footer-legal { color: #E6CDBD; }
 
-/* Oliwka i miód: naturalnie i spokojnie, ciepła zieleń zamiast chłodnej;
-   przyciski 6,0:1, miodowy akcent w tytule 5,6:1 */
-html[data-palette="oliwka"] {
-  --bg: #F2EEE3;
-  --sand: #E6E1CF;
+/* Szałwia i miód: ciepła, przygaszona szałwia (z nutą oliwki) na ciepłej kości
+   słoniowej; przyciski 5,5:1, miodowy akcent w tytule 5,6:1 */
+html[data-palette="szalwia"] {
+  --bg: #F4F1E8;
+  --sand: #E8E7D9;
   --surface: #FBF9F2;
-  --ink: #24281F;
-  --ink-2: #52564A;
-  --clay: #56653A;
-  --clay-text: #4E5C33;
-  --clay-soft: #E2E6CF;
-  --line: #DAD5C1;
-  --field: #7A7862;
-  --night: #2E3424;
-  --cream: #F4F1E6;
+  --ink: #262A20;
+  --ink-2: #525649;
+  --clay: #5A6B4E;
+  --clay-text: #4F5F44;
+  --clay-soft: #E4E7D6;
+  --line: #DCDACB;
+  --field: #737A62;
+  --night: #30362A;
+  --cream: #F4F2E8;
   --panel: rgb(251 249 242 / 0.9);
+  --bar-bg: rgb(251 249 242 / 0.95);
 }
-html[data-palette="oliwka"] body::after { background: linear-gradient(rgb(242 238 227 / 0.38), rgb(242 238 227 / 0.38)), url("img/tlo-trawa.jpg") center / cover no-repeat; }
-html[data-palette="oliwka"][data-bg="kwiaty"] body::after { background: linear-gradient(rgb(242 238 227 / 0.38), rgb(242 238 227 / 0.38)), url("img/tlo-kwiaty.jpg") center / cover no-repeat; }
-html[data-palette="oliwka"] .hero h1 em { color: #8A5A1C; }
-html[data-palette="oliwka"] .photo { background: linear-gradient(160deg, #F1EEDF 0%, #DCDCC1 55%, #BFC29E 100%); }
-html[data-palette="oliwka"] { --bar-bg: rgb(251 249 242 / 0.95); }
-html[data-palette="oliwka"] .btn:hover { box-shadow: 0 10px 24px -12px rgb(86 101 58 / 0.6); }
-html[data-palette="oliwka"] .footer-title, html[data-palette="oliwka"] .footer-legal { color: #D8D6C2; }
+html[data-palette="szalwia"] body::after { background: linear-gradient(rgb(244 241 232 / 0.38), rgb(244 241 232 / 0.38)), url("img/tlo-trawa.jpg") center / cover no-repeat; }
+html[data-palette="szalwia"][data-bg="kwiaty"] body::after { background: linear-gradient(rgb(244 241 232 / 0.38), rgb(244 241 232 / 0.38)), url("img/tlo-kwiaty.jpg") center / cover no-repeat; }
+html[data-palette="szalwia"] .hero h1 em { color: #8A5A1C; }
+html[data-palette="szalwia"] .photo { background: linear-gradient(160deg, #EEEEE0 0%, #D3D8BF 55%, #AEB795 100%); }
+html[data-palette="szalwia"] .btn:hover { background: #4C5B41; border-color: #4C5B41; box-shadow: 0 10px 24px -12px rgb(90 107 78 / 0.6); }
+html[data-palette="szalwia"] .footer-title, html[data-palette="szalwia"] .footer-legal { color: #D9DBC8; }
 html[data-palette][data-bg="brak"] body::after { background: none; }
+
+/* Paleta „oryginalne”, wersja wyrazistsza (01.11.2026): te same barwy, większe
+   nasycenie i ciemniejsze akcenty; przyciski 7,4:1 */
+:root {
+  --bg: #F3EADD;
+  --sand: #E9DAC6;
+  --ink: #2A201A;
+  --ink-2: #554538;
+  --clay: #6E4A31;
+  --clay-text: #62422D;
+  --clay-soft: #ECD9C2;
+  --line: #DCCBB6;
+  --field: #7F6A58;
+  --night: #33251D;
+}
+.btn:hover { box-shadow: 0 10px 24px -12px rgb(110 74 49 / 0.6); }
+.photo { background: linear-gradient(160deg, #EFDFCB 0%, #DEC3A6 55%, #C6A584 100%); }
+.footer-title, .footer-legal { color: #DCC8B4; }

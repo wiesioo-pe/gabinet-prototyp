@@ -240,8 +240,19 @@
     });
   }
 
+  // Rząd z linkami przewija się ze stroną; gdy zniknie, górny pasek dostaje obramowanie i cień
+  function initStickyBar() {
+    var bar = document.querySelector(".topbar");
+    var subnav = document.querySelector(".subnav");
+    if (!bar || !subnav || !("IntersectionObserver" in window)) return;
+    new IntersectionObserver(function (entries) {
+      bar.classList.toggle("is-stuck", !entries[0].isIntersecting);
+    }, { rootMargin: "-" + bar.offsetHeight + "px 0px 0px 0px" }).observe(subnav);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initVariants();
+    initStickyBar();
     initVacation();
     initContactForm();
     initPanel();

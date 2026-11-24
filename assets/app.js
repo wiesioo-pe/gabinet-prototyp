@@ -121,20 +121,41 @@
       label.textContent = "Wysyłanie wiadomości…";
       if (status) status.textContent = "Wysyłanie wiadomości…";
 
-      window.setTimeout(function () {
+      function fail() {
         if (status) status.textContent = "";
-        if (simulateFailure) {
-          simulateFailure = false;
-          submit.disabled = false;
-          submit.removeAttribute("aria-busy");
-          label.textContent = "Spróbuj ponownie";
-          sendError.hidden = false;
-          sendError.focus();
-          return;
-        }
-        // Sukces: przejście na stronę potwierdzenia bez danych w adresie.
+        submit.disabled = false;
+        submit.removeAttribute("aria-busy");
+        label.textContent = "Spróbuj ponownie";
+        sendError.hidden = false;
+        sendError.focus();
+      }
+      // Sukces: przejście na stronę potwierdzenia bez danych w adresie.
+      function done() {
         window.location.href = "potwierdzenie.html";
         label.textContent = original;
+      }
+
+      // Tryb „live” ustawia skrypt publikacji na Cloudflare; na GitHub Pages formularz jest demonstracją
+      if (form.getAttribute("data-form-mode") === "live") {
+        fetch(form.getAttribute("action"), {
+          method: "POST",
+          headers: { "Accept": "application/json", "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(new FormData(form)).toString()
+        }).then(function (res) {
+          return res.json().catch(function () { return { ok: false }; }).then(function (data) {
+            if (res.ok && data.ok) done(); else fail();
+          });
+        }).catch(fail);
+        return;
+      }
+
+      window.setTimeout(function () {
+        if (simulateFailure) {
+          simulateFailure = false;
+          fail();
+          return;
+        }
+        done();
       }, 900);
     });
   }

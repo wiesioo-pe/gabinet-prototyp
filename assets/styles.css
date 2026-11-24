@@ -752,3 +752,11 @@ html[data-palette][data-bg="brak"] body::after { background: none; }
 .topics h3 { font-size: calc(var(--step-1) * var(--display-scale)); line-height: 1.2; margin: 0 0 0.375rem; color: var(--ink); }
 .topics p { margin: 0; color: var(--ink-2); font-size: var(--step--1); line-height: 1.55; }
 @media (min-width: 40rem) { .topics { grid-template-columns: 1fr 1fr; } }
+
+/* Numery pomocowe jako przyciski wplecione w tekst */
+.crisis .numbers-inline { line-height: 2.05; }
+.crisis .numbers-inline a {
+  display: inline-block; padding: 0 0.625rem; line-height: 1.75; white-space: nowrap;
+  border-radius: var(--radius-pill); background: var(--sand); color: var(--ink); font-weight: 600; text-decoration: none;
+}
+.crisis .numbers-inline a:hover { background: var(--clay-soft); }

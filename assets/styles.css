@@ -822,3 +822,14 @@ html[data-palette][data-bg="brak"] body::after { background: none; }
 .demo-note { padding: 0.75rem 1rem; border: 1px solid var(--field); border-radius: var(--radius-s); }
 .crisis .numbers-inline { line-height: 2.05; }
 .crisis .numbers-inline a { min-height: 1.875rem; padding-block: 0; }
+
+/* Podstrony (polityka, potwierdzenie, 404): ten sam jasny panel co sekcje strony głównej */
+.page-hero > .wrap, .section > .wrap {
+  background: var(--panel); border-radius: var(--radius-l);
+  padding: var(--space-l) var(--space-m);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.page-hero { padding-top: var(--space-m); padding-bottom: var(--space-s); }
+.section { padding-top: 0; padding-bottom: var(--space-s); }
+.page-hero > .wrap > *, .legal > article { max-width: 46rem; }
+@media (min-width: 56rem) { .page-hero > .wrap, .section > .wrap { padding: var(--space-xl) var(--space-l); } }

@@ -760,3 +760,14 @@ html[data-palette][data-bg="brak"] body::after { background: none; }
   border-radius: var(--radius-pill); background: var(--sand); color: var(--ink); font-weight: 600; text-decoration: none;
 }
 .crisis .numbers-inline a:hover { background: var(--clay-soft); }
+
+/* Wyrównanie (24.11.2026): cyfry równej wysokości w kołach kroków, pierwsza linia tekstu na środku koła */
+.steps-simple li::before { font-variant-numeric: lining-nums tabular-nums; line-height: 1; padding-top: 0.08em; }
+.steps-simple li > span { padding-top: calc((2.75rem - 1lh) / 2); }
+.block-body .facts { margin-top: var(--space-s); }
+@media (min-width: 56rem) {
+  /* Suma udziałów ≥ 1: przy szerokim tytule kolumna zdjęcia bierze całe pozostałe miejsce, więc zdjęcie dochodzi do prawej krawędzi treści */
+  .hero-grid { grid-template-columns: 1.47fr 1fr; }
+  /* Wszystkie sekcje (także Kontakt) kończą się na tej samej prawej krawędzi */
+  .block-grid > .block-body { max-width: none; }
+}

@@ -9,6 +9,8 @@
 
   // --- Komunikat o urlopie (demonstracja stanu sterowanego z panelu) ---
   function initVacation() {
+    // Na stronie obsługiwanej przez Worker (data-live) urlop wynika z danych panelu; przełącznik jest tylko w prototypie
+    if (document.documentElement.hasAttribute("data-live")) return;
     var params = new URLSearchParams(window.location.search);
     if (params.get("urlop") === "1") store.set("proto-urlop", "1");
     if (params.get("urlop") === "0") store.set("proto-urlop", "0");

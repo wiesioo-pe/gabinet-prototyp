@@ -9,8 +9,8 @@
 <meta name="theme-color" content="#F4F1E8">
 <link rel="preload" href="fonts/gilda-display-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/styles.css?v=202611251929">
-<script src="assets/app.js?v=202611251929" defer></script>
+<link rel="stylesheet" href="assets/styles.css?v=202611252015">
+<script src="assets/app.js?v=202611252015" defer></script>
 </head>
 <body class="">
 <a class="skip-link" href="#tresc">Przejdź do treści</a>
@@ -48,7 +48,7 @@
       <h1 id="hero-title">Psychoterapia <em>psychoanalityczna</em> w&nbsp;Gdańsku</h1>
       <p class="lead">Pracuję z osobami dorosłymi, młodzieżą i dziećmi. Spotkania odbywają się w gabinecie.</p>
       <div class="notice notice-vacation" data-vacation hidden role="status">
-        <div><h2>Przerwa urlopowa: 2–8 listopada 2026</h2><p>W tym czasie nie odpowiadam na wiadomości i telefony. Do wiadomości wrócę od 9 listopada.</p></div>
+        <div><h2 data-field="vacation-title">Przerwa urlopowa: 2–8 listopada 2026</h2><p><span data-field="vacation-text">W tym czasie nie odpowiadam na wiadomości i telefony.</span> <span data-field="vacation-return">Do wiadomości wrócę od 9 listopada.</span></p></div>
       </div>
       <div class="actions">
         <a class="btn" href="#kontakt">Kontakt w sprawie konsultacji <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -108,8 +108,8 @@
     <h2 id="cennik-title">Cennik</h2>
     <div class="block-body stack">
       <dl class="prices">
-        <div><dt>Konsultacja psychoterapeutyczna</dt><dd>200 zł <span>50 min</span></dd></div>
-        <div><dt>Psychoterapia indywidualna<small>1, 2 lub 3 razy w tygodniu, w stałych terminach</small></dt><dd>200 zł <span>50 min</span></dd></div>
+        <div><dt>Konsultacja psychoterapeutyczna</dt><dd><span class="pv-amount" data-field="price-consultation">200 zł</span> <span>50 min</span></dd></div>
+        <div><dt>Psychoterapia indywidualna<small>1, 2 lub 3 razy w tygodniu, w stałych terminach</small></dt><dd><span class="pv-amount" data-field="price-session">200 zł</span> <span>50 min</span></dd></div>
       </dl>
       <ul class="plain-list rules-list">
         <li>Spotkania trwają 50 minut.</li>
@@ -143,13 +143,14 @@
     <div class="stack contact-intro">
       <h2 id="kontakt-title">Kontakt</h2>
       <div class="notice notice-vacation" data-vacation hidden role="status">
-        <div><h3>Przerwa urlopowa: 2–8 listopada 2026</h3><p>W tym czasie nie odpowiadam na wiadomości i telefony. Do wiadomości wrócę od 9 listopada; odpowiedź zwykle w ciągu 1–2 dni roboczych od powrotu.</p></div>
+        <div><h3 data-field="vacation-title">Przerwa urlopowa: 2–8 listopada 2026</h3><p><span data-field="vacation-text">W tym czasie nie odpowiadam na wiadomości i telefony.</span> <span data-field="vacation-return">Do wiadomości wrócę od 9 listopada.</span> Odpowiedź zwykle w ciągu <span data-field="reply-time">1–2</span> dni roboczych od powrotu.</p></div>
       </div>
-      <p data-vacation-off>Odpowiadam zwykle w ciągu 1–2 dni roboczych. O dostępnych terminach informuję w odpowiedzi.</p>
+      <p data-vacation-off>Odpowiadam zwykle w ciągu <span data-field="reply-time">1–2</span> dni roboczych. O dostępnych terminach informuję w odpowiedzi.</p>
       <p class="small muted">W sprawie konsultacji dla dziecka lub nastolatka proszę o kontakt rodzica lub opiekuna prawnego.</p>
       <ul class="contact-lines">
-        <li><span>Telefon</span><a href="tel:+48665447859">+48 665 447 859</a><small data-vacation-off>pon.–pt., 9:00–18:00</small></li>
-        <li><span>E-mail</span><a href="mailto:martamroz.psychoterapia@gmail.com">martamroz.psychoterapia@gmail.com</a></li>
+        <li><span>Telefon</span><a data-field="phone" href="tel:+48665447859">+48 665 447 859</a><small data-vacation-off data-field="contact-hours">pon.–pt., 9:00–18:00</small></li>
+        <li><span>E-mail</span><a data-field="email" href="mailto:martamroz.psychoterapia@gmail.com">martamroz.psychoterapia@gmail.com</a></li>
+        <li><span>Facebook</span><a href="https://www.facebook.com/profile.php?id=61595613346767" rel="noopener">Profil gabinetu</a><small>otwiera serwis zewnętrzny</small></li>
       </ul>
     </div>
 
@@ -159,9 +160,10 @@
         <div><h3>Nie można wysłać wiadomości. Do poprawy:</h3><ul></ul></div>
       </div>
       <div class="notice notice-err" id="send-error" tabindex="-1" hidden role="alert">
-        <div><h3>Nie udało się wysłać wiadomości.</h3><p>Wpisane dane pozostały w formularzu. Można spróbować ponownie albo zadzwonić: <a href="tel:+48665447859">+48 665 447 859</a>, lub napisać: <a href="mailto:martamroz.psychoterapia@gmail.com">martamroz.psychoterapia@gmail.com</a>.</p></div>
+        <div><h3>Nie udało się wysłać wiadomości.</h3><p>Wpisane dane pozostały w formularzu. Można spróbować ponownie albo zadzwonić: <a data-field="phone" href="tel:+48665447859">+48 665 447 859</a>, lub napisać: <a data-field="email" href="mailto:martamroz.psychoterapia@gmail.com">martamroz.psychoterapia@gmail.com</a>.</p></div>
       </div>
-      <form id="contact-form" class="form-plain" action="potwierdzenie.html" method="post" data-form-mode="demo" novalidate aria-labelledby="formularz">
+      <div class="notice" data-form-off hidden role="status"><div><h3>Formularz jest chwilowo niedostępny</h3><p>Proszę zadzwonić albo napisać e-mail; dane kontaktowe są obok.</p></div></div>
+      <form id="contact-form" class="form-plain" action="potwierdzenie.html" method="post" data-form-mode="demo" data-form-on novalidate aria-labelledby="formularz">
         <h3 id="formularz" class="form-title">Formularz kontaktowy</h3>
         <div class="field">
           <label for="f-name">Imię lub pseudonim <span class="req">(wymagane)</span></label>
@@ -212,8 +214,9 @@
         <p class="footer-brand">Marta Mróz</p>
         <p class="small">Psychoterapia psychoanalityczna · dorośli, młodzież, dzieci · Gdańsk, Trójmiasto</p>
         <ul class="footer-list">
-          <li><a href="tel:+48665447859">+48 665 447 859</a></li>
-          <li><a href="mailto:martamroz.psychoterapia@gmail.com">martamroz.psychoterapia@gmail.com</a></li>
+          <li><a data-field="phone" href="tel:+48665447859">+48 665 447 859</a></li>
+          <li><a data-field="email" href="mailto:martamroz.psychoterapia@gmail.com">martamroz.psychoterapia@gmail.com</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61595613346767" rel="noopener">Facebook</a></li>
         </ul>
       </div>
       <div class="footer-crisis" role="note" aria-labelledby="kryzys-stopka">

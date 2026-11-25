@@ -9,8 +9,8 @@
 <meta name="theme-color" content="#F4F1E8">
 <link rel="preload" href="fonts/gilda-display-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/styles.css?v=202611251929">
-<script src="assets/app.js?v=202611251929" defer></script>
+<link rel="stylesheet" href="assets/styles.css?v=202611252015">
+<script src="assets/app.js?v=202611252015" defer></script>
 </head>
 <body class="">
 <a class="skip-link" href="#tresc">Przejdź do treści</a>
@@ -54,7 +54,7 @@
     <article>
       <h2 class="h3-like">1. Administrator danych</h2>
       <p>Administratorem danych osobowych jest Marta Mróz, prowadząca działalność gospodarczą pod firmą Marta Mróz psychoterapia, ul. Władysława Paneckiego 19/31, 80-306 Gdańsk.</p>
-      <p>W sprawach dotyczących danych osobowych można kontaktować się ze mną e-mailem: <a href="mailto:martamroz.psychoterapia@gmail.com">martamroz.psychoterapia@gmail.com</a>, telefonicznie: <a href="tel:+48665447859">+48 665 447 859</a> lub listownie na adres gabinetu.</p>
+      <p>W sprawach dotyczących danych osobowych można kontaktować się ze mną e-mailem: <a data-field="email" href="mailto:martamroz.psychoterapia@gmail.com">martamroz.psychoterapia@gmail.com</a>, telefonicznie: <a data-field="phone" href="tel:+48665447859">+48 665 447 859</a> lub listownie na adres gabinetu.</p>
     </article>
 
     <article>
@@ -130,7 +130,7 @@
       <h2 class="h3-like">9. Pliki cookies i narzędzia analityczne</h2>
       <p>Strona nie używa plików cookies ani narzędzi analitycznych, reklamowych lub śledzących. Fonty i grafiki są dostarczane razem ze stroną; nie osadzam zewnętrznych map ani widgetów.</p>
       <p>Ta wersja demonstracyjna korzysta z pamięci sesyjnej przeglądarki (sessionStorage), aby zapamiętać wybrane warianty wyglądu i demonstracyjny komunikat o urlopie. Nie zapisuje w tej pamięci treści formularza. Pamięć sesyjna znika po zamknięciu karty przeglądarki.</p>
-      <p>Link „Mapa dojazdu” otwiera serwis OpenStreetMap. Po przejściu na tę stronę obowiązują zasady prywatności jej operatora.</p>
+      <p>Linki „Mapa dojazdu” i „Facebook” otwierają serwisy zewnętrzne (OpenStreetMap, Facebook). Strona nie osadza ich treści, więc nie łączy się z nimi, dopóki link nie zostanie kliknięty. Po przejściu na te strony obowiązują zasady prywatności ich operatorów.</p>
     </article>
 
     <article>
@@ -153,8 +153,9 @@
         <p class="footer-brand">Marta Mróz</p>
         <p class="small">Psychoterapia psychoanalityczna · dorośli, młodzież, dzieci · Gdańsk, Trójmiasto</p>
         <ul class="footer-list">
-          <li><a href="tel:+48665447859">+48 665 447 859</a></li>
-          <li><a href="mailto:martamroz.psychoterapia@gmail.com">martamroz.psychoterapia@gmail.com</a></li>
+          <li><a data-field="phone" href="tel:+48665447859">+48 665 447 859</a></li>
+          <li><a data-field="email" href="mailto:martamroz.psychoterapia@gmail.com">martamroz.psychoterapia@gmail.com</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61595613346767" rel="noopener">Facebook</a></li>
         </ul>
       </div>
       <div class="footer-crisis" role="note" aria-labelledby="kryzys-stopka">

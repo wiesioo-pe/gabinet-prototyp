@@ -841,3 +841,11 @@ html[data-palette][data-bg="brak"] body::after { background: none; }
 
 /* Kontakt: nagłówek przewija się razem z tekstem pod nim (przyklejona jest cała lewa kolumna, nie sam nagłówek) */
 .block .contact-intro h2 { position: static; }
+
+/* Panel danych (ADR 0007) */
+.panel-links { font-size: 0.9375rem; white-space: nowrap; }
+.panel-history { margin-top: var(--space-xl); }
+.history-list { list-style: none; margin: var(--space-s) 0 0; padding: 0; display: grid; gap: 0.5rem; }
+.history-list li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; padding: 0.625rem 0; border-bottom: 1px solid var(--line); font-size: var(--step--1); }
+
+.contact-lines a[href*="facebook.com"] { font-family: var(--font-body); font-weight: 500; font-size: var(--step-0); color: var(--ink); text-decoration-color: var(--clay); }

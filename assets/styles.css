@@ -838,3 +838,6 @@ html[data-palette][data-bg="brak"] body::after { background: none; }
 .hero-media::before { content: none; }
 .photo-portrait, html[data-palette] .photo-portrait { border-radius: 999px 999px var(--radius-l) var(--radius-l); box-shadow: none; }
 @media (min-width: 56rem) { .photo-portrait { border-radius: 999px 999px var(--radius-l) var(--radius-l); } }
+
+/* Kontakt: nagłówek przewija się razem z tekstem pod nim (przyklejona jest cała lewa kolumna, nie sam nagłówek) */
+.block .contact-intro h2 { position: static; }

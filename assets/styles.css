@@ -833,3 +833,8 @@ html[data-palette][data-bg="brak"] body::after { background: none; }
 .section { padding-top: 0; padding-bottom: var(--space-s); }
 .page-hero > .wrap > *, .legal > article { max-width: 46rem; }
 @media (min-width: 56rem) { .page-hero > .wrap, .section > .wrap { padding: var(--space-xl) var(--space-l); } }
+
+/* Portret: powrót do łuku (decyzja użytkownika 2026-11-25), bez przesuniętej ramki i cienia */
+.hero-media::before { content: none; }
+.photo-portrait, html[data-palette] .photo-portrait { border-radius: 999px 999px var(--radius-l) var(--radius-l); box-shadow: none; }
+@media (min-width: 56rem) { .photo-portrait { border-radius: 999px 999px var(--radius-l) var(--radius-l); } }

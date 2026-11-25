@@ -594,7 +594,7 @@ h1 { font-size: calc(var(--step-5) * var(--display-scale)); line-height: 1.04; }
 body { background: var(--bg); }
 body::after {
   content: ""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
-  background: linear-gradient(rgb(244 237 227 / 0.35), rgb(244 237 227 / 0.35)), url("img/tlo-trawa.jpg") center / cover no-repeat;
+  background: linear-gradient(rgb(244 237 227 / 0.35), rgb(244 237 227 / 0.35)), url("img/tlo-gipsowka.jpg") center / cover no-repeat;
 }
 html[data-bg="kwiaty"] body::after { background: linear-gradient(rgb(244 237 227 / 0.35), rgb(244 237 227 / 0.35)), url("img/tlo-kwiaty.jpg") center / cover no-repeat; }
 html[data-bg="brak"] body::after { background: none; }
@@ -694,7 +694,7 @@ html[data-palette="terakota"] {
   --cream: #F8EEE4;
   --panel: rgb(253 248 242 / 0.9);
 }
-html[data-palette="terakota"] body::after { background: linear-gradient(rgb(245 228 214 / 0.38), rgb(245 228 214 / 0.38)), url("img/tlo-trawa.jpg") center / cover no-repeat; }
+html[data-palette="terakota"] body::after { background: linear-gradient(rgb(245 228 214 / 0.38), rgb(245 228 214 / 0.38)), url("img/tlo-gipsowka.jpg") center / cover no-repeat; }
 html[data-palette="terakota"][data-bg="kwiaty"] body::after { background: linear-gradient(rgb(245 228 214 / 0.38), rgb(245 228 214 / 0.38)), url("img/tlo-kwiaty.jpg") center / cover no-repeat; }
 html[data-palette="terakota"] .photo { background: linear-gradient(160deg, #F6E3D5 0%, #E8C3AC 55%, #D2A088 100%); }
 html[data-palette="terakota"] { --bar-bg: rgb(253 248 242 / 0.95); }
@@ -719,7 +719,7 @@ html[data-palette="szalwia"] {
   --panel: rgb(251 249 242 / 0.9);
   --bar-bg: rgb(251 249 242 / 0.95);
 }
-html[data-palette="szalwia"] body::after { background: linear-gradient(rgb(244 241 232 / 0.38), rgb(244 241 232 / 0.38)), url("img/tlo-trawa.jpg") center / cover no-repeat; }
+html[data-palette="szalwia"] body::after { background: linear-gradient(rgb(244 241 232 / 0.38), rgb(244 241 232 / 0.38)), url("img/tlo-gipsowka.jpg") center / cover no-repeat; }
 html[data-palette="szalwia"][data-bg="kwiaty"] body::after { background: linear-gradient(rgb(244 241 232 / 0.38), rgb(244 241 232 / 0.38)), url("img/tlo-kwiaty.jpg") center / cover no-repeat; }
 html[data-palette="szalwia"] .hero h1 em { color: #8A5A1C; }
 html[data-palette="szalwia"] .photo { background: linear-gradient(160deg, #EEEEE0 0%, #D3D8BF 55%, #AEB795 100%); }

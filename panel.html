@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="pl" data-font="cormorant" data-bg="trawa" data-palette="oryginalne">
+<html lang="pl" data-font="gilda" data-bg="kwiaty" data-palette="szalwia">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Panel strony (makieta) · Marta Mróz</title>
 <meta name="description" content="Makieta panelu do aktualizacji cen, godzin kontaktu i komunikatu o urlopie.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#F4EDE3">
-<link rel="preload" href="fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#F4F1E8">
+<link rel="preload" href="fonts/gilda-display-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/styles.css?v=202611251830">
-<script src="assets/app.js?v=202611251830" defer></script>
+<link rel="stylesheet" href="assets/styles.css?v=202611251849">
+<script src="assets/app.js?v=202611251849" defer></script>
 </head>
 <body class="panel-page">
 <a class="skip-link" href="#tresc">Przejdź do treści</a>
@@ -18,7 +18,7 @@
   <div class="wrap">
     <p><strong>PROTOTYP</strong> · treści, ceny i dane są przykładowe</p>
     <p class="proto-switch" aria-label="Krój tytułów">Krój: <button type="button" data-set-font="cormorant">Cormorant</button><button type="button" data-set-font="marcellus">Marcellus</button><button type="button" data-set-font="gilda">Gilda</button></p>
-    <p class="proto-switch" aria-label="Tło strony">Tło: <button type="button" data-set-bg="trawa">trawa</button><button type="button" data-set-bg="kwiaty">kwiaty</button><button type="button" data-set-bg="brak">bez zdjęcia</button></p>
+    <p class="proto-switch" aria-label="Tło strony">Tło: <button type="button" data-set-bg="gipsowka">gipsówka</button><button type="button" data-set-bg="kwiaty">kwiaty</button><button type="button" data-set-bg="brak">bez zdjęcia</button></p>
     <p class="proto-switch" aria-label="Kolory">Kolory: <button type="button" data-set-palette="oryginalne">oryginalne</button><button type="button" data-set-palette="terakota">terakota</button><button type="button" data-set-palette="szalwia">szałwia i miód</button></p>
     <p><a href="panel.html">Panel edycji</a> · <a href="?urlop=1" data-toggle-vacation>Pokaż komunikat o urlopie</a></p>
   </div>
@@ -55,7 +55,7 @@
     </fieldset>
     <fieldset class="panel-group">
       <legend>Kontakt</legend>
-      <div class="field"><label for="p-hours">Godziny kontaktu telefonicznego</label><input id="p-hours" type="text" maxlength="120" value="pon.–pt., 12:00–13:00"></div>
+      <div class="field"><label for="p-hours">Godziny kontaktu telefonicznego</label><input id="p-hours" type="text" maxlength="120" value="pon.–pt., 9:00–18:00"></div>
       <div class="row-2">
         <div class="field"><label for="p-reply-min">Czas odpowiedzi: od</label><input id="p-reply-min" type="number" min="1" max="10" value="1"></div>
         <div class="field"><label for="p-reply-max">do (dni roboczych)</label><input id="p-reply-max" type="number" min="1" max="10" value="2"></div>
@@ -86,7 +86,7 @@
           <div><dt>Konsultacja psychoterapeutyczna</dt><dd><span id="pv-consult" class="pv-amount">200 zł</span> <span>50 min</span></dd></div>
           <div><dt>Psychoterapia indywidualna</dt><dd><span id="pv-session" class="pv-amount">200 zł</span> <span>50 min</span></dd></div>
         </dl>
-        <p class="small" id="pv-contact">Telefon: <span id="pv-hours">pon.–pt., 12:00–13:00</span>. Odpowiedź zwykle w ciągu <span id="pv-reply">1–2</span> dni roboczych.</p>
+        <p class="small" id="pv-contact">Telefon: <span id="pv-hours">pon.–pt., 9:00–18:00</span>. Odpowiedź zwykle w ciągu <span id="pv-reply">1–2</span> dni roboczych.</p>
       </div>
     </div>
     <div class="form-actions">
